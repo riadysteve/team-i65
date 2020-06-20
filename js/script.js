@@ -19,3 +19,13 @@ window.addEventListener("scroll", () => {
     header.classList.remove('scroll');
   }
 });
+
+const whyus = document.querySelector('.why-us');
+const listcompany = whyus.previousElementSibling.offsetTop;
+const whyusarea = whyus.offsetTop;
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset >= listcompany) {
+    whyus.style.animation = "fadeIn 2s forwards";
+  }
+});

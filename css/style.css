@@ -71,6 +71,10 @@ ul {
   text-decoration: underline;
 }
 
+p {
+  opacity: .8;
+}
+
 /* Header */
 header {
   background-color: rgb(138, 43, 226);
@@ -137,11 +141,13 @@ section.landing {
   position: relative;
 }
 
-.landing-grid {
+.landing-grid,
+.why-us-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 2rem;
+  grid-column-gap: 3rem;
+  grid-row-gap: 4rem;
 }
 
 .landing-img img {
@@ -158,14 +164,12 @@ section.landing {
 
 .landing-content p {
   margin-bottom: 30px;
-  opacity: .8;
 }
 
 /* Company Section */
 .list-company {
   text-align: center;
   padding: 40px 0;
-  margin-bottom: 1000px;
   background-color: #f3f3f3;
 }
 
@@ -191,6 +195,51 @@ section.landing {
   transform: translateY(-5px);
   transition: transform .8s ease;
 }
+
+/* Why Us Section */
+.border-bottom::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 30px;
+  margin: 3px auto;
+  background-color: blueviolet;
+}
+
+.why-us {
+  padding: 100px 0;
+  opacity: 0;
+}
+
+.why-us h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.why-us-info h3 {
+  font-size: 1.8rem;
+  width: 70%;
+  margin-bottom: 1.5rem;
+}
+
+.why-us-info p {
+  line-height: 1.8;
+}
+
+.why-us-img:hover {
+  animation: rotate 4s infinite;
+}
+
+.why-us-img img {
+  width: 100%;
+}
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   html {
@@ -259,6 +308,30 @@ section.landing {
   }
 }
 
+@keyframes fadeDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -287,5 +360,27 @@ section.landing {
 
   to {
     height: 60px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(1deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  75% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(0);
   }
 }
