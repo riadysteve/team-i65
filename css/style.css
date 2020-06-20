@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #1f1f1f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(182, 113, 246);
+}
+
+body {
+  font-family: 'Montserrat';
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: blueviolet;
+  color: #fff;
+  border: 2px solid blueviolet;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: blueviolet;
+  transition: all .5s ease;
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.text-primary {
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: rgb(138, 43, 226);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+header.scroll {
+  background-color: rgb(138, 43, 226, .65);
+  backdrop-filter: blur(2rem);
+}
+
+nav {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brands {
+  font-size: 1.7rem;
+}
+
+.nav-brands span {
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+}
+
+header nav .burger {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: none;
+  z-index: 999;
+}
+
+header nav .burger>div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  margin: 4px 0;
+}
+
+/* Landing Section */
+section.landing {
+  padding: 40px 0;
+  margin-top: 60px;
+  position: relative;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.landing-img img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.landing-content p {
+  margin-bottom: 30px;
+  opacity: .8;
+}
+
+/* Company Section */
+.list-company {
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 1000px;
+  background-color: #f3f3f3;
+}
+
+.list-company h3 {
+  margin-bottom: 3rem;
+  font-size: 20px;
+  color: #888;
+}
+
+.companies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.companies img {
+  margin: 0 auto;
+}
+
+.companies img:hover {
+  transform: translateY(-5px);
+  transition: transform .8s ease;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  header.active {
+    height: 100vh;
+    transition: all .5s ease;
+  }
+
+  header nav .burger {
+    display: block;
+  }
+
+  .active .line-one {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+
+  .active .line-two {
+    opacity: 0;
+  }
+
+  header.active ul.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    animation: fade 1s forwards;
+  }
+
+  header.active ul.nav-links li {
+    margin: 20px 0;
+  }
+
+  .active .line-three {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  ul.nav-links {
+    display: none;
+  }
+
+  .landing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-content {
+    order: 1;
+  }
+
+  .landing-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .list-company {
+    margin-top: 40px;
+  }
+
+  .companies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    height: 100vh;
+    opacity: 1;
+  }
+}
+
+@keyframes stretch {
+  from {
+    height: 60px;
+  }
+
+  to {
+    height: 100vh;
+  }
+}
+
+@keyframes back {
+  from {
+    height: 100vh;
+  }
+
+  to {
+    height: 60px;
+  }
+}
