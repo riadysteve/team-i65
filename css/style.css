@@ -211,6 +211,10 @@ section.landing {
   opacity: 0;
 }
 
+.order4 {
+  order: 1;
+}
+
 .why-us h2 {
   text-align: center;
   font-size: 2.2rem;
@@ -287,12 +291,29 @@ section.landing {
     display: none;
   }
 
-  .landing-grid {
+  .landing-grid,
+  .why-us-content {
     grid-template-columns: 1fr;
   }
 
   .landing-content {
     order: 1;
+  }
+
+  .order1 {
+    order: 1;
+  }
+
+  .order2 {
+    order: 2;
+  }
+
+  .order3 {
+    order: 3;
+  }
+
+  .order4 {
+    order: 4;
   }
 
   .landing-content h1 {
