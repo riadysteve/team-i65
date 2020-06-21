@@ -66,9 +66,12 @@ ul {
   background: transparent;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 .text-primary {
   color: blueviolet;
-  text-decoration: underline;
 }
 
 p {
@@ -239,7 +242,23 @@ section.landing {
   width: 100%;
 }
 
+/* Service Section */
+.service {
+  padding: 80px 0;
+  background-color: #f4f4f4;
+  margin-bottom: 400px;
+}
 
+.service h2 {
+  margin-bottom: 50px;
+  font-size: 2.3rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
 
 
 
@@ -292,7 +311,8 @@ section.landing {
   }
 
   .landing-grid,
-  .why-us-content {
+  .why-us-content,
+  .services {
     grid-template-columns: 1fr;
   }
 
@@ -327,8 +347,13 @@ section.landing {
   .companies {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .why-us-info h3 {
+    width: 100%;
+  }
 }
 
+/* Keyframes */
 @keyframes fadeDown {
   from {
     transform: translateY(-100px);
