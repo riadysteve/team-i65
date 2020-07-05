@@ -90,7 +90,7 @@ header {
 }
 
 header.scroll {
-  background-color: rgb(138, 43, 226, .65);
+  background-color: rgb(138, 43, 226, .7);
   backdrop-filter: blur(2rem);
 }
 
@@ -246,10 +246,10 @@ section.landing {
 .service {
   padding: 80px 0;
   background-color: #f4f4f4;
-  margin-bottom: 400px;
 }
 
-.service h2 {
+.service h2,
+.portfolio h2 {
   margin-bottom: 50px;
   font-size: 2.3rem;
 }
@@ -260,13 +260,56 @@ section.landing {
   gap: 3rem;
 }
 
+/* Portfolio Section */
+.portfolio {
+  padding: 100px 0;
+}
 
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
 
+.portfolio-grid .portfolio-img {
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
 
+.portfolio-case {
+  cursor: pointer;
+}
 
-@media (max-width: 768px) {
+.portfolio-grid .portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform .5s ease;
+}
+
+.portfolio-grid .portfolio-desc h3 {
+  font-size: 1.3rem;
+}
+
+.portfolio-grid .portfolio-case:hover .portfolio-img img {
+  transform: scale(1);
+}
+
+.portfolio-grid .portfolio-case:nth-child(even) {
+  transform: translateY(-80px);
+}
+
+@media (max-width: 990px) {
   html {
     font-size: 90%;
+  }
+
+  .landing-content h1 {
+    font-size: 2.2rem;
   }
 
   header.active {
@@ -350,6 +393,14 @@ section.landing {
 
   .why-us-info h3 {
     width: 100%;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid .portfolio-case:nth-child(even) {
+    transform: translateY(0);
   }
 }
 
