@@ -9,6 +9,7 @@
 html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -24,7 +25,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   line-height: 1.6;
 }
 
@@ -53,17 +54,20 @@ ul {
   background-color: blueviolet;
   color: #fff;
   border: 2px solid blueviolet;
+  display: inline-block;
 }
 
 .btn-primary:hover {
   background-color: transparent;
   color: blueviolet;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .btn-secondary {
   border: 2px solid #fff;
+  /* display: inline-block; */
   background: transparent;
+  color: white;
 }
 
 .text-underline {
@@ -75,7 +79,7 @@ ul {
 }
 
 p {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 /* Header */
@@ -90,7 +94,7 @@ header {
 }
 
 header.scroll {
-  background-color: rgb(138, 43, 226, .7);
+  background-color: rgb(138, 43, 226, 0.7);
   backdrop-filter: blur(2rem);
 }
 
@@ -128,7 +132,7 @@ header nav .burger {
   z-index: 999;
 }
 
-header nav .burger>div {
+header nav .burger > div {
   width: 25px;
   height: 3px;
   background-color: #fff;
@@ -196,12 +200,12 @@ section.landing {
 
 .companies img:hover {
   transform: translateY(-5px);
-  transition: transform .8s ease;
+  transition: transform 0.8s ease;
 }
 
 /* Why Us Section */
 .border-bottom::after {
-  content: '';
+  content: "";
   display: block;
   height: 3px;
   width: 30px;
@@ -249,7 +253,8 @@ section.landing {
 }
 
 .service h2,
-.portfolio h2 {
+.portfolio h2,
+.contact h2 {
   margin-bottom: 50px;
   font-size: 2.3rem;
 }
@@ -288,7 +293,7 @@ section.landing {
   height: 100%;
   object-fit: cover;
   transform: scale(1.1);
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .portfolio-grid .portfolio-desc h3 {
@@ -303,6 +308,55 @@ section.landing {
   transform: translateY(-80px);
 }
 
+/* Contact Section */
+#footer-contact {
+  background-color: blueviolet;
+  color: white;
+}
+
+.contact {
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact h2 {
+  margin-bottom: 10px;
+}
+
+.contact p {
+  margin-bottom: 30px;
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .social-media a {
+  width: 24px;
+  height: 24px;
+}
+
+.footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .social-media a {
+  margin-right: 20px;
+}
+
+.footer .social-media a:last-child {
+  margin-right: 0;
+}
+.footer .footer-left p {
+  opacity: 0.5;
+}
+
 @media (max-width: 990px) {
   html {
     font-size: 90%;
@@ -314,7 +368,7 @@ section.landing {
 
   header.active {
     height: 100vh;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
   header nav .burger {
